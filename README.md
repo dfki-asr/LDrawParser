@@ -1,6 +1,22 @@
 # LDrawParser
 ANTLR4 grammars for LDraw lexer and parser
 
+## Installation & Usage
+Install LDrawParser into your local repository by typing
+```
+mvn clean install package
+```
+and add a dependency to your project's `pom.xml` like this
+```
+<dependency>
+	<groupId>de.dfki.resc28</groupId>
+  	<artifactId>LDrawParser</artifactId>
+  	<version>0.1</version>
+</dependency>
+```
+
+Happy parsing!
+
 ## Contributing
 Contributions are very welcome.
 
