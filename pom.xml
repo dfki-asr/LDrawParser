@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+
+<!-- This file is part of LDrawParser. It is subject to the license terms in
+ the LICENSE file found in the top-level directory of this distribution.
+ You may not use this file except in compliance with the License. -->
+    
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>de.dfki.resc28</groupId>
+  <artifactId>LDrawParser</artifactId>
+  <version>0.1</version>
+  <packaging>jar</packaging>
+  <name>LDrawParser</name>
+  <url>https://github.com/rmrschub/LDrawParser</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <antlr4.version>4.5.3</antlr4.version>
+  </properties>
+
+
+  <build>
+    <plugins>
+		<plugin>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr4-maven-plugin</artifactId>
+            <version>${antlr4.version}</version>
+            <configuration>
+                <configuration>
+                	<grammars>LDraw.g4</grammars>
+                    <listener>true</listener>
+                    <visitor>true</visitor>
+                </configuration>
+            </configuration>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>antlr4</goal>
+                    </goals>                 
+                </execution>
+            </executions>
+        </plugin>
+        <!-- 
+    	<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.0</version>
+			<configuration>
+				<source>${target.jvm}</source>
+				<target>${target.jvm}</target>
+			</configuration>
+		</plugin>
+		-->
+	</plugins>
+</build>
+
+  <reporting>
+	<plugins>
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>license-maven-plugin</artifactId>
+            <version>1.9</version>
+        </plugin>
+	</plugins>
+  </reporting>
+  
+  <dependencies>
+
+    <dependency>
+      <groupId>org.antlr</groupId>
+      <artifactId>antlr4-runtime</artifactId>
+      <version>${antlr4.version}</version>
+      <type>jar</type>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.antlr</groupId>
+      <artifactId>antlr4-maven-plugin</artifactId>
+      <version>${antlr4.version}</version>
+      <scope>compile</scope>
+    </dependency>
+
+  </dependencies>
+  
+
+</project>
