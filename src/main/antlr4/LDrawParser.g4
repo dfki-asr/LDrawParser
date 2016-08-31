@@ -11,7 +11,7 @@ tokenVocab = LDrawLexer;
 }
 
 @header {
-package de.dfki.resc28.LDraw.Parser ;
+package de.dfki.resc28.LDrawParser ;
 }
 
 @members {
