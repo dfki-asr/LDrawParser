@@ -1,5 +1,5 @@
 # LDrawParser
-ANTLR4 grammars for LDraw lexer and parser
+LDrawParser comes as two ANTLR4 grammars for generating LDraw lexer and parser programs.
 
 ## Installation & Usage
 Install LDrawParser into your local repository by typing
