@@ -35,6 +35,10 @@ COLOUR_CMD
   : '0 !COLOUR'
   ;
 
+EMPTY_COMMENT_CMD
+  : '0' EOL
+  ;
+
 COMMENT_CMD
   : '0 //'
   | '0 --'
@@ -151,6 +155,7 @@ TYPE
   | 'Sub-part'
   | 'Hi-Res Primitive'
   | 'Cross-reference'
+  | 'Unofficial_Part'
   ;
 
 ORIGINAL 
@@ -220,7 +225,16 @@ STRING
 fragment CHAR
   : 'A' .. 'Z' 
   | 'a' .. 'z'
-  | '0' .. '9'
+  | '0'
+  | '1'
+  | '2'
+  | '3'
+  | '4'
+  | '5'
+  | '6'
+  | '7'
+  | '8'
+  | '9'
   | 'ü'
   | 'Ü'
   | 'ä'

@@ -29,7 +29,8 @@ package de.dfki.resc28.LDrawParser ;
  * File Format
  */
 file
-  : title row+ INT? EOF
+//  : title row+ INT? EOF
+  : title row+ EOF
   ;
 
 title 
@@ -61,6 +62,7 @@ row
   | triangle_row 
   | quadrilateral_row 
   | optional_row
+  | empty_comment_row
   | comment_row 
   | EOL+
   ;
@@ -93,6 +95,10 @@ cmdline_row
 //  : LINE_TYPE_0 COLOUR_CMD NAME CODE_X VALUE_V EDGE e [ALPHA a] [LUMINANCE l] [ CHROME | PEARLESCENT | RUBBER | MATTE_METALLIC | METAL | MATERIAL <params> ] 
 //  ;
 
+empty_comment_row
+  : EMPTY_COMMENT_CMD
+  ;
+  
 comment_row
   : COMMENT_CMD free_text EOL
   | INT STRING+ EOL
@@ -111,7 +117,7 @@ keywords_row
   ;
 
 ldraw_row 
-  : LDRAW_ORG_CMD type qualifiers* ( ORIGINAL | UPDATE ) YYYY_RR? EOL
+  : LDRAW_ORG_CMD type qualifiers* ( ORIGINAL | UPDATE )? YYYY_RR? EOL
   ;
   
 license_row 
@@ -198,11 +204,11 @@ subFile
   ;
   
 subPart
-  : SUBPART FILENAME
+  : SUBPART? FILENAME
   ;
 
 hiResPrimitive
-  : HIRESPRIMITIVE FILENAME
+  : HIRESPRIMITIVE? FILENAME
   ;
 
 qualifiers
