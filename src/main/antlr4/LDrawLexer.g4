@@ -156,6 +156,17 @@ TYPE
   | 'Hi-Res Primitive'
   | 'Cross-reference'
   | 'Unofficial_Part'
+  | 'Unofficial_Subpart'
+  | 'Unofficial_Primitive'
+  | 'Unofficial_48_Primitive'
+  | 'Unofficial_Shortcut'
+  | 'Unofficial_File'
+  | 'Unofficial_Model'
+  | 'Unofficial_Submodel'
+  | 'Unofficial_Element'
+  | 'Unofficial_Sub-part'
+  | 'Unofficial_Hi-Res Primitive'
+  | 'Unofficial_Cross-reference'
   ;
 
 ORIGINAL 
