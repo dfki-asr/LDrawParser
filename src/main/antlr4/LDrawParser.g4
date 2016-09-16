@@ -28,8 +28,8 @@ package de.dfki.resc28.LDrawParser ;
 /*
  * File Format
  */
-file
 //  : title row+ INT? EOF
+file
   : title row+ EOF
   ;
 
@@ -125,7 +125,7 @@ license_row
   ;
 
 name_row 
-  : NAME_CMD FILENAME EOL
+  : NAME_CMD (SUBPART | HIRESPRIMITIVE)? FILENAME EOL
   ;
 
 pause_row 
